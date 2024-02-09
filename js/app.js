@@ -1,8 +1,10 @@
 const classDivs = document.querySelectorAll('.class-div')
-const dealCards = document.querySelectorAll('legendCards')
+// const deal= document.querySelectorAll('.legendCards')
 
 
+const playerHand = [
 
+] 
 
 const classType = [
     'support',
@@ -39,6 +41,21 @@ gibraltar - support
 loba - support
 mirage -support
 newcastle - support
+
+
+If user has the better deck of legend cards 
+
+user === Win
+
+If user has the worst deck of cards 
+
+user === lose
+
+while playerCard.length <= 3 push random card into array
+
+while playerCard.length === 3 computerCard
+
+splice
 */
 let legendCards = [
 {
@@ -232,7 +249,7 @@ let legendCards = [
     class: 'support',
     character: 'mirage',
     desc: 'Holographic Trickster',
-    imgUrl: 'mirage.jpg',
+    imgUrl: 'mirage.png',
     value: 1
 },
 {
@@ -263,25 +280,11 @@ legendCards.forEach(card => {
     legend.innerHTML = `
     <img src="images/${card.imgUrl}" class="img-fluid legend-image card-img-top" alt="${card.desc}">
         <div class="card-body">
-            <h4 class="card-title">${card.item}</h4>
-            <p class="card-text">${card.desc}</p>
+            <h3 class="card-title text-capitalize">${card.character}</h3>
+            <h4 class="card-subtitle text-capitalize">${card.class}</h4>
+            <p class="card-text text-capitalize">${card.desc}</p>
         </div>
     <footer class="card-footer">
-        <p class"card-text item-price">${card.price}</p>
-        <div class="buttons-div d-flex justify-content-around">
-            <button 
-            class="btn btn-danger cart-btn text-capitalize" 
-                id="Btn${card.id}" 
-                data-id="${card.id}"  
-                data-item="${card.item}"
-            >add to cart</button>
-            <div class="qty-div">
-                <button 
-                class="btn btn-primary btn-subtract" 
-                id="btnSubtract${card.id}"
-                data-id="${card.id}"
-                <span class="quantity" id="quantity${card.id}">${card.qty}</span>
-            </div>
         </div>
     </footer>
     `
@@ -310,8 +313,31 @@ legendCards.forEach(card => {
     }
 })
 
-dealCards.forEach(shuffle => {
-    dealCards(Math.floor(Math.random))
+const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 
-    console.log(shuffle)
-})
+const dealCards =(arr)=> {
+    console.log(arr[shuffle(arr)])
+}
+
+dealCards(legendCards)
+
+for (let i = 0; i <= 2; i++) {
+    console.log(legendCards[i])
+}
+
+const getPlayerHand =()=> {
+    console.log(playerHand, legendCards)
+    // if (playerHand.length <= 3) [
+        
+    // ]
+}
+
+getPlayerHand()
+
+
+
+// .forEach(shuffle => {
+//     dealCards(Math.floor(Math.random))
+
+//     console.log(shuffle)
+// })
