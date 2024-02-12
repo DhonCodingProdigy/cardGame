@@ -1,2 +1,11 @@
 
 *{box-sizing: border-box;}
+
+.top-nav-list {
+    margin: 20px;
+}
+
+.top-nav-link {
+    text-decoration: none;
+    color: #000;
+}
