@@ -1,5 +1,29 @@
 const classDivs = document.querySelectorAll('.class-div')
 // const deal= document.querySelectorAll('.legendCards')
+const cardSection = document.getElementById('legendCardSection')
+const characterButton = document.getElementById('characterButton')
+const shuffleBtn = document.getElementById('shuffleBtn')
+
+shuffleBtn.addEventListener("click", ()=> {
+    if(shuffleBtn.classList.contains('d-block')) {
+        shuffleBtn.classList.remove('d-block')
+        shuffleBtn.classList.add('d-none')
+    }
+})
+console.log(cardSection)
+
+characterButton.addEventListener("click", ()=> {
+    if (cardSection.classList.contains('d-none')) {
+        cardSection.classList.remove('d-none')
+        cardSection.classList.add('d-block')
+    }
+    // } else if (cardSection.classList.contains('d-none')) {
+    //     cardSection.classList.remove('d-none')
+    //     cardSection.classList.add('d-block')
+    // }
+
+    console.log(cardSection)
+})
 
 
 const playerHand = [
@@ -291,6 +315,8 @@ legendCards.forEach(card => {
 
     column.appendChild(legend);
 
+    // console.log(column)
+
     switch(card.class) {
         case 'assault':
             assaRow.appendChild(column)
@@ -316,17 +342,17 @@ legendCards.forEach(card => {
 const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 
 const dealCards =(arr)=> {
-    console.log(arr[shuffle(arr)])
+    // console.log(arr[shuffle(arr)])
 }
 
 dealCards(legendCards)
 
 for (let i = 0; i <= 2; i++) {
-    console.log(legendCards[i])
+    // console.log(legendCards[i])
 }
 
 const getPlayerHand =()=> {
-    console.log(playerHand, legendCards)
+    // console.log(playerHand, legendCards)
     // if (playerHand.length <= 3) [
         
     // ]

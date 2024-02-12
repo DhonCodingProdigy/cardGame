@@ -17,7 +17,8 @@
                         <a href="#" class="top-nav-link text-capitalize">play game</a>
                     </li>
                     <li class="nav-list top-nav-list">
-                        <a href="#" class="top-nav-link text-capitalize">characters</a>
+                        <!-- <a href="#legendCardSection" class="top-nav-link text-capitalize">characters</a> -->
+                        <button class="character-button" id="characterButton"></button>
                     </li>
                     <li class="nav-list top-nav-list">
                         <a href="#" class="top-nav-link text-capitalize">instructions</a>
@@ -36,7 +37,7 @@
                 <div class="class-div" id="controllerDiv"></div>
             </div>
         </section>
-        <section class="section" id="legendCardSection">
+        <section class="section d-none" id="legendCardSection">
             <div class="container">
                 <div  class="row" id="assaultRow"></div>
                 <div  class="row" id="reconRow"></div>
@@ -45,7 +46,7 @@
                 <div  class="row" id="controllerRow"></div>
             </div>
         </section>
-        <button type="button" class="btn btn-primary text-capitalize">shuffle deck</button>
+        <button type="button" class="btn btn-primary text-capitalize d-block" id="shuffleBtn">shuffle deck</button>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
