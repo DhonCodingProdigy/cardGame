@@ -10,6 +10,7 @@ shuffleBtn.addEventListener("click", ()=> {
         shuffleBtn.classList.add('d-none')
     }
 })
+
 console.log(cardSection)
 
 characterButton.addEventListener("click", ()=> {
