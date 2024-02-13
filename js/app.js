@@ -11,25 +11,30 @@ shuffleBtn.addEventListener("click", ()=> {
     }
 })
 
-console.log(cardSection)
+// console.log(cardSection)
+
+
+
 
 characterButton.addEventListener("click", ()=> {
     if (cardSection.classList.contains('d-none')) {
         cardSection.classList.remove('d-none')
         cardSection.classList.add('d-block')
     }
+    if (shuffleBtn.classList.contains('d-block')) {
+        shuffleBtn.classList.remove('d-block')
+        shuffleBtn.classList.add('d-none')
+    }
     // } else if (cardSection.classList.contains('d-none')) {
     //     cardSection.classList.remove('d-none')
     //     cardSection.classList.add('d-block')
     // }
 
-    console.log(cardSection)
+    // console.log(cardSection)
 })
 
 
-const playerHand = [
-
-] 
+const playerHand = [] 
 
 const classType = [
     'support',
@@ -287,6 +292,8 @@ let legendCards = [
 },
 ]
 
+
+
 // init () {
 
 // }
@@ -299,7 +306,7 @@ const contRow = document.getElementById("controllerRow")
 
 legendCards.forEach(card => {
     const column = document.createElement('div')
-    column.classList.add("col-md-3")
+    column.classList.add("col-md-2", 'm-2')
     const legend = document.createElement('div')
     legend.classList.add("legend", "h-100")
     legend.innerHTML = `
@@ -342,24 +349,36 @@ legendCards.forEach(card => {
 
 const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 
+// console.log(shuffle(legendCards))
+
 const dealCards =(arr)=> {
     // console.log(arr[shuffle(arr)])
 }
 
 dealCards(legendCards)
 
-for (let i = 0; i <= 2; i++) {
-    // console.log(legendCards[i])
-}
 
-const getPlayerHand =()=> {
+
+const getPlayerHand =(arr)=> {
+    for (let i = 0; i <= 2; i++) {
+        // console.log(legendCards[i])
+        // let object = arr[shuffle(arr)]
+        // playerHand.push(object)
+        playerHand.push(arr[shuffle(arr)])
+        // console.log(object, arr[shuffle(arr)])
+    }
     // console.log(playerHand, legendCards)
     // if (playerHand.length <= 3) [
         
-    // ]
-}
+        // ]
+    }
+    // console.log(playerHand)
 
-getPlayerHand()
+console.log(playerHand)
+
+// playerHand.push
+
+getPlayerHand(legendCards)
 
 
 

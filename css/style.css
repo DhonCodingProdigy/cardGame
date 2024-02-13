@@ -9,3 +9,8 @@
     text-decoration: none;
     color: #000;
 }
+
+.top-nav-btn {
+    background-color: white;
+    border: none;
+}
