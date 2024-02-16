@@ -13,6 +13,9 @@ shuffleBtn.addEventListener("click", ()=> {
 
 // console.log(cardSection)
 
+const startGame = document.getElementById('startGame')
+
+
 
 
 
@@ -35,6 +38,8 @@ characterButton.addEventListener("click", ()=> {
 
 
 const playerHand = [] 
+
+const computerHand = []
 
 const classType = [
     'support',
@@ -351,39 +356,28 @@ const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 
 // console.log(shuffle(legendCards))
 
-const dealCards =(arr)=> {
-    // console.log(arr[shuffle(arr)])
-}
-
-dealCards(legendCards)
+// const dealCards =(arr)=> {
+//     console.log(arr[shuffle(arr)])
+// }
 
 
 
 const getPlayerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
-        // console.log(legendCards[i])
-        // let object = arr[shuffle(arr)]
-        // playerHand.push(object)
         playerHand.push(arr[shuffle(arr)])
-        // console.log(object, arr[shuffle(arr)])
     }
-    // console.log(playerHand, legendCards)
-    // if (playerHand.length <= 3) [
-        
-        // ]
-    }
-    // console.log(playerHand)
+}
+getPlayerHand(legendCards)
 
 console.log(playerHand)
 
-// playerHand.push
+const getComputerHand =(arr)=> {
+    for (let i = 0; i <= 2; i++) {
+        computerHand.push(arr[shuffle(arr)])
+    }
+}
+getComputerHand(legendCards)
 
-getPlayerHand(legendCards)
+console.log(computerHand)
 
 
-
-// .forEach(shuffle => {
-//     dealCards(Math.floor(Math.random))
-
-//     console.log(shuffle)
-// })
