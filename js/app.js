@@ -2,12 +2,12 @@ const classDivs = document.querySelectorAll('.class-div')
 // const deal= document.querySelectorAll('.legendCards')
 const cardSection = document.getElementById('legendCardSection')
 const characterButton = document.getElementById('characterButton')
-const shuffleBtn = document.getElementById('shuffleBtn')
+const playNow = document.getElementById('playNow')
 
-shuffleBtn.addEventListener("click", ()=> {
-    if(shuffleBtn.classList.contains('d-block')) {
-        shuffleBtn.classList.remove('d-block')
-        shuffleBtn.classList.add('d-none')
+playNow.addEventListener("click", ()=> {
+    if(playNow.classList.contains('d-block')) {
+        playNow.classList.remove('d-block')
+        playNow.classList.add('d-none')
     }
 })
 
@@ -24,9 +24,9 @@ characterButton.addEventListener("click", ()=> {
         cardSection.classList.remove('d-none')
         cardSection.classList.add('d-block')
     }
-    if (shuffleBtn.classList.contains('d-block')) {
-        shuffleBtn.classList.remove('d-block')
-        shuffleBtn.classList.add('d-none')
+    if (playNow.classList.contains('d-block')) {
+        playNow.classList.remove('d-block')
+        playNow.classList.add('d-none')
     }
     // } else if (cardSection.classList.contains('d-none')) {
     //     cardSection.classList.remove('d-none')
@@ -379,5 +379,17 @@ const getComputerHand =(arr)=> {
 getComputerHand(legendCards)
 
 console.log(computerHand)
+
+/* makeCards
+
+array.forEach
+
+call this function in both getHand functions
+
+gameBoardRow.appendChild(card)
+
+
+*/
+
 
 
