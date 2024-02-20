@@ -3,6 +3,7 @@ const classDivs = document.querySelectorAll('.class-div')
 const cardSection = document.getElementById('legendCardSection')
 const characterButton = document.getElementById('characterButton')
 const playNow = document.getElementById('playNow')
+const playNowSection = document.getElementById('gameBoard')
 
 playNow.addEventListener("click", ()=> {
     if(playNow.classList.contains('d-block')) {
@@ -34,6 +35,13 @@ characterButton.addEventListener("click", ()=> {
     // }
 
     // console.log(cardSection)
+})
+
+playNow.addEventListener('click', ()=> {
+    if (playNowSection.classList.contains('d-none')) {
+        playNowSection.classList.remove('d-none')
+        playNowSection.classList.add('d-block')
+    }
 })
 
 
@@ -98,7 +106,7 @@ let legendCards = [
     class: 'assault',
     character: 'ash',
     desc: 'Incisive Instigator',
-    imgUrl: 'ash.jpg',
+    imgUrl: '../images/ash.jpg',
     value: 4
 },
 
@@ -107,7 +115,7 @@ let legendCards = [
     class: 'assault',
     character: 'bangalore',
     desc: 'Professional Soldier',
-    imgUrl: 'bangalore.jpg',
+    imgUrl: '../images/bangalore.jpg',
     value: 8
 }, 
 {
@@ -115,7 +123,7 @@ let legendCards = [
     class: 'assault',
     character: 'ballistic',
     desc: 'Refined Gunslinger',
-    imgUrl: 'ballistic.jpg',
+    imgUrl: '../images/ballistic.jpg',
     value: 3
 }, 
 {
@@ -123,7 +131,7 @@ let legendCards = [
     class: 'assault',
     character: 'fuse',
     desc: 'Bombastic Explosives Expert',
-    imgUrl: 'fuse.jpg',
+    imgUrl: '../images/fuse.jpg',
     value: 6
 },
 {
@@ -131,7 +139,7 @@ let legendCards = [
     class: 'assault',
     character: 'mad maggie',
     desc: 'rebel warlord',
-    imgUrl: 'mad maggie.jpg',
+    imgUrl: '../images/mad maggie.jpg',
     value: 4
 },
 {
@@ -139,7 +147,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'horizon',
     desc: 'Gravitational Manipulator',
-    imgUrl: 'horizon.jpg',
+    imgUrl: '../images/horizon.jpg',
     value: 9
 },
 {
@@ -147,7 +155,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'octane',
     desc: 'High-Speed Daredevil',
-    imgUrl: 'octane.jpg',
+    imgUrl: '../images/octane.jpg',
     value: 6
 },
 {
@@ -155,7 +163,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'pathfinder',
     desc: 'Forward Scout',
-    imgUrl: 'pathfinder.jpg',
+    imgUrl: '../images/pathfinder.jpg',
     value: 6
 },
 {
@@ -163,7 +171,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'revenant',
     desc: 'Synthetic Nightmare',
-    imgUrl: 'revenant.jpg',
+    imgUrl: '../images/revenant.jpg',
     value: 6
 },
 {
@@ -171,7 +179,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'Valkyrie',
     desc: 'Winged Avenger',
-    imgUrl: 'valkyrie.jpg',
+    imgUrl: '../images/valkyrie.jpg',
     value: 7
 },
 {
@@ -179,7 +187,7 @@ let legendCards = [
     class: 'skirmisher',
     character: 'wraith',
     desc: 'Interdimensional Skirmisher',
-    imgUrl: 'wraith.jpg',
+    imgUrl: '../images/wraith.jpg',
     value: 6
 },
 {
@@ -187,7 +195,7 @@ let legendCards = [
     class: 'recon',
     character: 'bloodhound',
     desc: 'Technological Tracker',
-    imgUrl: 'bloodhound.jpg',
+    imgUrl: '../images/bloodhound.jpg',
     value: 7
 },
 {
@@ -195,7 +203,7 @@ let legendCards = [
     class: 'recon',
     character: 'crypto',
     desc: 'Surveillance Expert',
-    imgUrl: 'crypto.jpg',
+    imgUrl: '../images/crypto.jpg',
     value: 5
 },
 {
@@ -203,7 +211,7 @@ let legendCards = [
     class: 'recon',
     character: 'seer',
     desc: 'Ambush Artist',
-    imgUrl: 'seer.jpg',
+    imgUrl: '../images/seer.jpg',
     value: 2
 },
 {
@@ -211,7 +219,7 @@ let legendCards = [
     class: 'recon',
     character: 'vantage',
     desc: 'Sniper Savant',
-    imgUrl: 'vantage.jpg',
+    imgUrl: '../images/vantage.jpg',
     value: 3
 },
 {
@@ -219,7 +227,7 @@ let legendCards = [
     class: 'controller',
     character: 'catalyst',
     desc: 'Defense Conjurer',
-    imgUrl: 'catalyst.jpg',
+    imgUrl: '../images/catalyst.jpg',
     value: 8
 },
 
@@ -228,7 +236,7 @@ let legendCards = [
     class: 'controller',
     character: 'caustic',
     desc: 'Toxic Trapper',
-    imgUrl: 'caustic.jpg',
+    imgUrl: '../images/caustic.jpg',
     value: 5
 },
 {
@@ -236,7 +244,7 @@ let legendCards = [
     class: 'controller',
     character: 'rampart',
     desc: 'Amped Modder',
-    imgUrl: 'rampart.jpg',
+    imgUrl: '../images/rampart.jpg',
     value: 4
 },
 {
@@ -244,7 +252,7 @@ let legendCards = [
     class: 'controller',
     character: 'wattson',
     desc: 'Static Defender',
-    imgUrl: 'wattson.jpg',
+    imgUrl: '../images/wattson.jpg',
     value: 7
 },
 {
@@ -252,7 +260,7 @@ let legendCards = [
     class: 'support',
     character: 'conduit',
     desc: 'Shield Healer',
-    imgUrl: 'conduit.jpg',
+    imgUrl: '../images/conduit.jpg',
     value: 9
 },
 {
@@ -260,7 +268,7 @@ let legendCards = [
     class: 'support',
     character: 'gibraltar',
     desc: 'Shielded Fortress',
-    imgUrl: 'gibraltar.jpg',
+    imgUrl: '../images/gibraltar.jpg',
     value: 5
 },
 {
@@ -268,7 +276,7 @@ let legendCards = [
     class: 'support',
     character: 'lifeline',
     desc: 'Combat Medic',
-    imgUrl: 'lifeline.jpg',
+    imgUrl: '../images/lifeline.jpg',
     value: 3
 },
 {
@@ -276,7 +284,7 @@ let legendCards = [
     class: 'support',
     character: 'loba',
     desc: 'Translocating Thief',
-    imgUrl: 'loba.jpg',
+    imgUrl: '../images/loba.jpg',
     value: 6
 },
 {
@@ -284,7 +292,7 @@ let legendCards = [
     class: 'support',
     character: 'mirage',
     desc: 'Holographic Trickster',
-    imgUrl: 'mirage.png',
+    imgUrl: '../images/mirage.png',
     value: 1
 },
 {
@@ -292,7 +300,7 @@ let legendCards = [
     class: 'support',
     character: 'newcastle',
     desc: 'Heroic Defender',
-    imgUrl: 'newcastle.jpg',
+    imgUrl: '../images/newcastle.jpg',
     value: 3
 },
 ]
@@ -360,12 +368,38 @@ const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 //     console.log(arr[shuffle(arr)])
 // }
 
+const displayHands =(hands, user)=> {
+    hands.forEach(hand => {
+        // build column
+        const col = document.createElement('div')
+        col.classList.add('col', 'hand')
+
+        // build card 
+        const card = document.createElement('div')
+        card.classList.add('card')
+
+        const img = document.createElement('img')
+        img.setAttribute('src', hand.imgUrl )
+
+        card.appendChild(img)
+        col.appendChild(card)
+
+        if (user === 'player') {
+            document.getElementById('playerHand').appendChild(col)
+        } else if (user === 'computer') {
+            document.getElementById('computerHand').appendChild(col)
+        }
+
+    })
+}
+
 
 
 const getPlayerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
         playerHand.push(arr[shuffle(arr)])
     }
+    displayHands(arr, 'player')
 }
 getPlayerHand(legendCards)
 
@@ -375,6 +409,7 @@ const getComputerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
         computerHand.push(arr[shuffle(arr)])
     }
+    displayHands(arr, 'computer')
 }
 getComputerHand(legendCards)
 
@@ -390,6 +425,11 @@ gameBoardRow.appendChild(card)
 
 
 */
+
+// legendCards.forEach(card => {
+//     return legendCards
+// })
+
 
 
 
