@@ -19,7 +19,7 @@ const startGame = document.getElementById('startGame')
 
 
 
-
+// Character Button Click Element
 characterButton.addEventListener("click", ()=> {
     if (cardSection.classList.contains('d-none')) {
         cardSection.classList.remove('d-none')
@@ -37,6 +37,8 @@ characterButton.addEventListener("click", ()=> {
     // console.log(cardSection)
 })
 
+
+// Play Now Button Click Element
 playNow.addEventListener('click', ()=> {
     if (playNowSection.classList.contains('d-none')) {
         playNowSection.classList.remove('d-none')
@@ -44,11 +46,13 @@ playNow.addEventListener('click', ()=> {
     }
 })
 
-
+// Empty Player Array
 const playerHand = [] 
 
+// Empty Computer/AI Array
 const computerHand = []
 
+// Different Character Class That Has a Different Impact on the Game
 const classType = [
     'support',
     'recon',
@@ -100,6 +104,8 @@ while playerCard.length === 3 computerCard
 
 splice
 */
+
+// Legend Cards 
 let legendCards = [
 {
     id: 1,
@@ -137,7 +143,7 @@ let legendCards = [
 {
     id: 5,
     class: 'assault',
-    character: 'mad maggie',
+    character: 'madmaggie',
     desc: 'rebel warlord',
     imgUrl: '../images/mad maggie.jpg',
     value: 4
@@ -317,6 +323,7 @@ const suppRow = document.getElementById("supportRow")
 const skirRow = document.getElementById("skirmisherRow")
 const contRow = document.getElementById("controllerRow")
 
+// InnerHTML for the different cards in the array
 legendCards.forEach(card => {
     const column = document.createElement('div')
     column.classList.add("col-md-2", 'm-2')
@@ -338,6 +345,7 @@ legendCards.forEach(card => {
 
     // console.log(column)
 
+    // Switch HTML input type for the legend classes to categorize the different legends in the array and append them to the correct row
     switch(card.class) {
         case 'assault':
             assaRow.appendChild(column)
@@ -360,6 +368,7 @@ legendCards.forEach(card => {
     }
 })
 
+// shuffle method for card decks
 const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 
 // console.log(shuffle(legendCards))
@@ -368,26 +377,37 @@ const shuffle =(arr)=> Math.floor(Math.random() * arr.length)
 //     console.log(arr[shuffle(arr)])
 // }
 
+
 const displayHands =(hands, user)=> {
+    // console.log(hands)
     hands.forEach(hand => {
         // build column
         const col = document.createElement('div')
-        col.classList.add('col', 'hand')
+        col.classList.add('col-md-4', 'hand')
 
         // build card 
         const card = document.createElement('div')
         card.classList.add('card')
 
         const img = document.createElement('img')
-        img.setAttribute('src', hand.imgUrl )
+        img.setAttribute('src', hand.imgUrl)
+
+        const legend = document.createElement('h2')
+        legend.classList.add('legend', hand.character)
+        legend.innerText = hand.character
 
         card.appendChild(img)
+        card.appendChild(legend)
         col.appendChild(card)
 
+
+        // why am I getting 6 duplicate arrays instead of 2 random arrays 
         if (user === 'player') {
-            document.getElementById('playerHand').appendChild(col)
+            const playerHandDiv = document.getElementById('playerHandDiv')
+            playerHandDiv.appendChild(col)
         } else if (user === 'computer') {
-            document.getElementById('computerHand').appendChild(col)
+            const computerHandDiv = document.getElementById('computerHandDiv')
+            computerHandDiv.appendChild(col)
         }
 
     })
@@ -396,20 +416,22 @@ const displayHands =(hands, user)=> {
 
 
 const getPlayerHand =(arr)=> {
+    // console.log(arr)
     for (let i = 0; i <= 2; i++) {
         playerHand.push(arr[shuffle(arr)])
+        displayHands(playerHand, 'player')
+        console.log(playerHand, i)
     }
-    displayHands(arr, 'player')
+
 }
 getPlayerHand(legendCards)
 
-console.log(playerHand)
 
 const getComputerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
         computerHand.push(arr[shuffle(arr)])
+        displayHands(computerHand, 'computer')
     }
-    displayHands(arr, 'computer')
 }
 getComputerHand(legendCards)
 
