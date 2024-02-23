@@ -1,19 +1,18 @@
+/*
+1. introduce yourself
+2. teach them what the game is about and how the game it is played
+3. what do you want the game to do
+4. 
+
+*/
+
+
+
 const classDivs = document.querySelectorAll('.class-div')
-// const deal= document.querySelectorAll('.legendCards')
 const cardSection = document.getElementById('legendCardSection')
 const characterButton = document.getElementById('characterButton')
 const playNow = document.getElementById('playNow')
-const playNowSection = document.getElementById('gameBoard')
-
-playNow.addEventListener("click", ()=> {
-    if(playNow.classList.contains('d-block')) {
-        playNow.classList.remove('d-block')
-        playNow.classList.add('d-none')
-    }
-})
-
-// console.log(cardSection)
-
+const gameBoard = document.getElementById('gameBoard')
 const startGame = document.getElementById('startGame')
 
 
@@ -25,24 +24,27 @@ characterButton.addEventListener("click", ()=> {
         cardSection.classList.remove('d-none')
         cardSection.classList.add('d-block')
     }
-    if (playNow.classList.contains('d-block')) {
-        playNow.classList.remove('d-block')
-        playNow.classList.add('d-none')
+    if (startGame.classList.contains('d-block')) {
+        startGame.classList.remove('d-block')
+        startGame.classList.add('d-none')
     }
-    // } else if (cardSection.classList.contains('d-none')) {
-    //     cardSection.classList.remove('d-none')
-    //     cardSection.classList.add('d-block')
-    // }
-
-    // console.log(cardSection)
+    if (gameBoard.classList.contains('d-block')) {
+        gameBoard.classList.remove('d-block')
+        gameBoard.classList.add('d-none')
+    }
 })
+
 
 
 // Play Now Button Click Element
 playNow.addEventListener('click', ()=> {
-    if (playNowSection.classList.contains('d-none')) {
-        playNowSection.classList.remove('d-none')
-        playNowSection.classList.add('d-block')
+    if (gameBoard.classList.contains('d-none')) {
+        gameBoard.classList.remove('d-none')
+        gameBoard.classList.add('d-block')
+    }
+    if (cardSection.classList.contains('d-block')) {
+        cardSection.classList.remove('d-block')
+        cardSection.classList.add('d-none')
     }
 })
 
@@ -122,7 +124,7 @@ let legendCards = [
     character: 'bangalore',
     desc: 'Professional Soldier',
     imgUrl: '../images/bangalore.jpg',
-    value: 8
+    value: 9
 }, 
 {
     id: 3,
@@ -138,7 +140,7 @@ let legendCards = [
     character: 'fuse',
     desc: 'Bombastic Explosives Expert',
     imgUrl: '../images/fuse.jpg',
-    value: 6
+    value: 7
 },
 {
     id: 5,
@@ -146,7 +148,7 @@ let legendCards = [
     character: 'madmaggie',
     desc: 'rebel warlord',
     imgUrl: '../images/mad maggie.jpg',
-    value: 4
+    value: 6
 },
 {
     id: 6,
@@ -154,7 +156,7 @@ let legendCards = [
     character: 'horizon',
     desc: 'Gravitational Manipulator',
     imgUrl: '../images/horizon.jpg',
-    value: 9
+    value: 7
 },
 {
     id: 7,
@@ -170,7 +172,7 @@ let legendCards = [
     character: 'pathfinder',
     desc: 'Forward Scout',
     imgUrl: '../images/pathfinder.jpg',
-    value: 6
+    value: 7
 },
 {
     id: 9,
@@ -178,7 +180,7 @@ let legendCards = [
     character: 'revenant',
     desc: 'Synthetic Nightmare',
     imgUrl: '../images/revenant.jpg',
-    value: 6
+    value: 7
 },
 {
     id: 10,
@@ -186,7 +188,7 @@ let legendCards = [
     character: 'Valkyrie',
     desc: 'Winged Avenger',
     imgUrl: '../images/valkyrie.jpg',
-    value: 7
+    value: 8
 },
 {
     id: 11,
@@ -194,7 +196,7 @@ let legendCards = [
     character: 'wraith',
     desc: 'Interdimensional Skirmisher',
     imgUrl: '../images/wraith.jpg',
-    value: 6
+    value: 7
 },
 {
     id: 12,
@@ -202,7 +204,7 @@ let legendCards = [
     character: 'bloodhound',
     desc: 'Technological Tracker',
     imgUrl: '../images/bloodhound.jpg',
-    value: 7
+    value: 10
 },
 {
     id: 13,
@@ -210,7 +212,7 @@ let legendCards = [
     character: 'crypto',
     desc: 'Surveillance Expert',
     imgUrl: '../images/crypto.jpg',
-    value: 5
+    value: 4
 },
 {
     id: 14,
@@ -226,7 +228,7 @@ let legendCards = [
     character: 'vantage',
     desc: 'Sniper Savant',
     imgUrl: '../images/vantage.jpg',
-    value: 3
+    value: 4
 },
 {
     id: 17,
@@ -234,7 +236,7 @@ let legendCards = [
     character: 'catalyst',
     desc: 'Defense Conjurer',
     imgUrl: '../images/catalyst.jpg',
-    value: 8
+    value: 6
 },
 
 {
@@ -243,7 +245,7 @@ let legendCards = [
     character: 'caustic',
     desc: 'Toxic Trapper',
     imgUrl: '../images/caustic.jpg',
-    value: 5
+    value: 8
 },
 {
     id: 19,
@@ -259,7 +261,7 @@ let legendCards = [
     character: 'wattson',
     desc: 'Static Defender',
     imgUrl: '../images/wattson.jpg',
-    value: 7
+    value: 8
 },
 {
     id: 21,
@@ -275,7 +277,7 @@ let legendCards = [
     character: 'gibraltar',
     desc: 'Shielded Fortress',
     imgUrl: '../images/gibraltar.jpg',
-    value: 5
+    value: 7
 },
 {
     id: 23,
@@ -283,7 +285,7 @@ let legendCards = [
     character: 'lifeline',
     desc: 'Combat Medic',
     imgUrl: '../images/lifeline.jpg',
-    value: 3
+    value: 4
 },
 {
     id: 24,
@@ -291,7 +293,7 @@ let legendCards = [
     character: 'loba',
     desc: 'Translocating Thief',
     imgUrl: '../images/loba.jpg',
-    value: 6
+    value: 5
 },
 {
     id: 25,
@@ -299,7 +301,7 @@ let legendCards = [
     character: 'mirage',
     desc: 'Holographic Trickster',
     imgUrl: '../images/mirage.png',
-    value: 1
+    value: 4
 },
 {
     id: 26,
@@ -307,7 +309,7 @@ let legendCards = [
     character: 'newcastle',
     desc: 'Heroic Defender',
     imgUrl: '../images/newcastle.jpg',
-    value: 3
+    value: 5
 },
 ]
 
@@ -383,7 +385,7 @@ const displayHands =(hands, user)=> {
     hands.forEach(hand => {
         // build column
         const col = document.createElement('div')
-        col.classList.add('col-md-4', 'hand')
+        col.classList.add('col-md-4' ,'mt-5', 'hand')
 
         // build card 
         const card = document.createElement('div')
@@ -400,7 +402,6 @@ const displayHands =(hands, user)=> {
         card.appendChild(legend)
         col.appendChild(card)
 
-
         // why am I getting 6 duplicate arrays instead of 2 random arrays 
         if (user === 'player') {
             const playerHandDiv = document.getElementById('playerHandDiv')
@@ -416,13 +417,10 @@ const displayHands =(hands, user)=> {
 
 
 const getPlayerHand =(arr)=> {
-    // console.log(arr)
     for (let i = 0; i <= 2; i++) {
         playerHand.push(arr[shuffle(arr)])
-        displayHands(playerHand, 'player')
-        console.log(playerHand, i)
     }
-
+    displayHands(playerHand, 'player')
 }
 getPlayerHand(legendCards)
 
@@ -430,12 +428,12 @@ getPlayerHand(legendCards)
 const getComputerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
         computerHand.push(arr[shuffle(arr)])
-        displayHands(computerHand, 'computer')
     }
+    displayHands(computerHand, 'computer')
 }
 getComputerHand(legendCards)
 
-console.log(computerHand)
+// console.log(computerHand)
 
 /* makeCards
 
