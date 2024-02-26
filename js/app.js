@@ -14,6 +14,9 @@ const characterButton = document.getElementById('characterButton')
 const playNow = document.getElementById('playNow')
 const gameBoard = document.getElementById('gameBoard')
 const startGame = document.getElementById('startGame')
+const decisionDiv = document.getElementById('decisionDiv')
+let playerHandValue = 0
+let computerHandValue = 0
 
 
 
@@ -398,6 +401,11 @@ const displayHands =(hands, user)=> {
         legend.classList.add('legend', hand.character)
         legend.innerText = hand.character
 
+        const legendClass = document.createElement('h3')
+        legendClass.classList.add('legendClass', hand.class)
+        legendClass.innerText = hand.class
+
+
         card.appendChild(img)
         card.appendChild(legend)
         col.appendChild(card)
@@ -416,11 +424,23 @@ const displayHands =(hands, user)=> {
 
 
 
+const getHandValue =(arr)=> {
+    let handValue = 0
+    arr.forEach(card => {
+        handValue += card.value
+        // console.log(handValue)
+    })
+    return handValue
+
+}
 const getPlayerHand =(arr)=> {
     for (let i = 0; i <= 2; i++) {
         playerHand.push(arr[shuffle(arr)])
     }
     displayHands(playerHand, 'player')
+    // getHandValue(playerHand)
+    playerHandValue = getHandValue(playerHand) 
+    // console.log(playerHandValue)
 }
 getPlayerHand(legendCards)
 
@@ -430,8 +450,25 @@ const getComputerHand =(arr)=> {
         computerHand.push(arr[shuffle(arr)])
     }
     displayHands(computerHand, 'computer')
+    computerHandValue = getHandValue(computerHand) 
+    // console.log(playerHandValue)
 }
 getComputerHand(legendCards)
+
+
+getHandValue(playerHand)
+
+const compareValue =()=> {
+    console.log(playerHandValue, computerHandValue)
+    if (playerHandValue > computerHandValue) {
+        decisionDiv.innerText = 'Player composition is goated'
+    } else if (playerHandValue < computerHandValue) {
+        decisionDiv.innerText = 'Computer composition is goated'
+    } else {
+        decisionDiv.innerText = 'Player and Computer has an even composition'
+    }
+}
+compareValue()
 
 // console.log(computerHand)
 
